@@ -2,6 +2,7 @@ version: '3'
 services: # アプリケーションの要素（今回はdb,web）
   db: # mysqlのイメージコンテナ
     image: mysql:5.7
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
     environment:
       MYSQL_DATABASE: hmw_exhibit_development
       MYSQL_ROOT_PASSWORD: exhibit
@@ -12,6 +13,7 @@ services: # アプリケーションの要素（今回はdb,web）
     volumes:
       - ./data/db_init:/docker-entrypoint-initdb.d # 初期データを投入するSQLが格納されているdir
       - ./data/db_data:/var/lib/mysql/ # コンテナの/var/lib/mysql/の内容を./data/dbへマウント
+      - ./data/cnf:/etc/mysql/conf.d/
   web: # 本体のサービスを構成するコンテナ
     build:
       context: .
