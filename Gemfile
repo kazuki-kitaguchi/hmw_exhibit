@@ -3,10 +3,17 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
+# userに関するgem
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
+# 環境変数に関するgem
 gem 'config'
+
+# 画像に関するgem
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
