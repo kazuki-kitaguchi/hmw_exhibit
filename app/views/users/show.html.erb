@@ -1,0 +1,10 @@
+<h1>プロフィール</h1>
+<img src=<%= @user.avatar %> class = "icon_image">
+<p>ユーザーID : <%= @user.username %></p>
+<p>ユーザー名 : <%= @user.nickname %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<p>プロフィール : <%= @user.profile %></p>
+
+
+<%= link_to 'プロフィール編集', edit_user_registration_path %>
+<%= link_to 'TOPへ戻る', root_path %>
