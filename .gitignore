@@ -32,3 +32,4 @@ config/environments/*.local.yml
 
 .DS_Store
 /data/*
+/public/uploads/*
