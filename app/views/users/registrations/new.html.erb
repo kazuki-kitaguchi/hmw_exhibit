@@ -41,6 +41,12 @@
     <%= f.text_area :profile %>
   </div>
 
+  <div class="field text-left">
+    <%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %>
+    <%= f.label '利用規約、及び、個人情報の取扱に同意する' %>
+    <%= link_to '利用規約', terms_path %> に同意頂けない方は、サービスを利用することができません。
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

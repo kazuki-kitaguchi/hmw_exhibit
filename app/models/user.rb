@@ -10,6 +10,8 @@ class User < ApplicationRecord
   validates :username,
   length: { minimum: 4, maximum: 20 },
   format: { with: /\A[a-z0-9]+\z/, message: "ユーザー名は半角英数字です"}
+
+  validates :accepted, presence: {message: 'を入力してください'}
   
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
